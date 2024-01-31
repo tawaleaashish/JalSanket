@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.userPage{
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.floatBtn{
+    z-index: 450;
+    display: flex;
+    flex-direction: column;
+    min-width: 15rem;
+    max-height: 8rem;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+    padding-left: 2rem;
+}
+.RP{
+    width: 15rem;
+    height: 3rem;
+    font-size: 1.25rem;
+    background-color: rgba(50, 254, 254, 0.753);
+    margin-right: 3rem;
+    border-radius: 0.75rem;
+    border-style: solid;
+    border-width: 0.1rem;
+    font-family:'Trebuchet MS';
+}
+.CS{
+    width: 15rem;
+    height: 3rem;
+    font-size: 1.25rem;
+    background-color: rgba(65, 250, 90, 0.753);
+    margin-right: 3rem;
+    border-radius: 0.75rem;
+    border-style: solid;
+    border-width: 0.1rem;
+    font-family:'Trebuchet MS';
+}
+#map { height: 180px; }
+@media screen and (max-width:600px){
+    .floatBtn{
+        height: 6rem;
+        width: 12rem;
+    }
+    .RP{
+        margin-right: 0.75rem;
+        height: 2.5rem;
+        width: 12rem;
+    }
+    .CS{
+        margin-right: 0.75rem;
+        height: 2.5rem;
+        width: 12rem;
+    }
+}
