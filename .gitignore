@@ -1,0 +1,4 @@
+.env.local
+package.json
+package-lock.json
+supabaseClient.js
