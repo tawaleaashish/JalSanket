@@ -32,41 +32,38 @@
                 <form id="UserloginForm" class="mb-4" style="display: block;">
                     <div class="mb-4">
                         <label for="username" class="block text-sm font-medium text-black">Username</label>
-                        <input type="text" id="username" name="username" class="mt-1 p-2 w-full border rounded-md">
+                        <input type="text" id="userloginId" name="username" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
                     </div>
 
                     <div class="mb-4">
                         <label for="password" class="block text-sm font-medium text-black">Password</label>
-                        <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md">
+                        <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
                     </div>
-
-                    <button type="submit"
-                        class="w-full bg-blue-300 text-black py-2 px-4 rounded focus:outline-none">Login</button>
                 </form>
 
                 <form id="AdminloginForm" class="mb-4" style="display: none;">
                     <div class="mb-4">
                         <label for="username" class="block text-sm font-medium text-black">Admin Username</label>
-                        <input type="text" id="username" name="username" class="mt-1 p-2 w-full border rounded-md">
+                        <input type="text" id="ADLoginName" name="username" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
                     </div>
-
+                   
                     <div class="mb-4">
                         <label for="password" class="block text-sm font-medium text-black">Password</label>
-                        <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md">
+                        <input type="password" id="ADpassword" name="password" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
                     </div>
-
-                    <button type="submit"
-                        class="w-full bg-blue-300 text-black py-2 px-4 rounded focus:outline-none">Login</button>
                 </form>
+                    
+                <button type="submit" id="loginBtn"
+                    class="w-full bg-blue-300 text-black py-2 px-4 rounded focus:outline-none" style="margin-top: 1rem;">Login</button>
 
-                <div class="flex justify-between text-sm">
+                <div class="flex justify-between text-sm py-2">
                     <a href="../UserRegister/register.html" class="text-black hover:underline">Register</a>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="login.js"></script>
+    <script type="module" src="login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </body>
 
 </html>
