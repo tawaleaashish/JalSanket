@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jal Sanket</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body class="bg-blue-400 bg-opacity-150 h-screen flex items-center justify-center">
+    <div class="glassmorphism-section">
+        <div class="glassmorphism-circle circle-1"></div>
+        <div class="glassmorphism-circle circle-2"></div>
+        <div class="glassmorphism-circle circle-3"></div>
+        <div class="glassmorphism-card">
+            <div class="flex justify-center items-center ">
+                <img src="logo.png" alt="alternate text">
+            </div>
+            <div>
+                <h2 class="text-2xl font-semibold mb-6 text-center">Jal Sanket</h2>
+
+                <div class="flex space-x-4 mb-4">
+                    <button id="adminBtn"
+                        class="flex-1 bg-blue-500 text-black py-2 px-4 rounded focus:outline-none">Admin</button>
+                    <button id="userBtn"
+                        class="flex-1 bg-green-500 text-black py-2 px-4 rounded focus:outline-none">User</button>
+                </div>
+
+                <form id="UserloginForm" class="mb-4" style="display: block;">
+                    <div class="mb-4">
+                        <label for="username" class="block text-sm font-medium text-black">Username</label>
+                        <input type="text" id="username" name="username" class="mt-1 p-2 w-full border rounded-md">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="password" class="block text-sm font-medium text-black">Password</label>
+                        <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md">
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-blue-300 text-black py-2 px-4 rounded focus:outline-none">Login</button>
+                </form>
+
+                <form id="AdminloginForm" class="mb-4" style="display: none;">
+                    <div class="mb-4">
+                        <label for="username" class="block text-sm font-medium text-black">Admin Username</label>
+                        <input type="text" id="username" name="username" class="mt-1 p-2 w-full border rounded-md">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="password" class="block text-sm font-medium text-black">Password</label>
+                        <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md">
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-blue-300 text-black py-2 px-4 rounded focus:outline-none">Login</button>
+                </form>
+
+                <div class="flex justify-between text-sm">
+                    <a href="../UserRegister/register.html" class="text-black hover:underline">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>
