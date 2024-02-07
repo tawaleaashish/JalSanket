@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jal Sanket</title>
+    <link rel="stylesheet" href="reportpage1.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.1.0/dist/geosearch.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-geosearch@3.1.0/dist/bundle.min.js"></script>
+</head>
+<body>
+    <div class="reportPage" id="map">
+        <div class="dropdownbox">
+            <form>
+                <select name="issue" id="issue">
+                    <option value="Water Contamination">Water Contamination</option>
+                    <option value="Water-logging">Water Logging</option>
+                    <option value="Flood">Flood</option>
+                    <option value="Drainage Problem">Drainage Problem</option>
+                    <option value="Water Supply">Water Supply</option>
+                </select>
+                <br><br>
+                <div class="LocSearch">
+                    <input  id="searchbar" type="text" placeholder="Search location">
+                    <div class="searchlogo"><input id="searchButton" type="submit" style="display: none;"></div>   
+                </div>
+                <br><br>
+                <input id="reportbtn" type="submit" value="Report">
+            </form>
+        </div>
+    </div>
+</body>
+<script src="reportpage1.js"></script>
+</html>
