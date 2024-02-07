@@ -176,10 +176,12 @@ body {
     padding: 3px;
     border: 1px solid black;
     border-radius: 0.5rem;
-    width: 15rem;
+    width: 12.5rem;
     height: 2rem;
     box-shadow: 2px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -196,4 +198,21 @@ body {
 }
 .glassmorphism-card{
     max-height: 90rem;
+}
+.LocSearch{
+    display: flex;
+    flex-direction: row;
+}
+.searchlogo{
+    background-image: url(icons8-search.svg);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 1px solid black;
+    border-left: 0rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    width: 2.5rem;
+    height: 2rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
