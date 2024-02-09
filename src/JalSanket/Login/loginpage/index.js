@@ -35,7 +35,10 @@ loginBtn.addEventListener('click', async()=>{
         if (data && data.length > 0) {
             // User login successful
             console.log("User login successful");
+            console.log(userloginId);
+            localStorage.setItem('user', JSON.stringify(data[0]));
             window.location.href="../../UserPage/userpage.html"
+
         } else {
             // User not found or password doesn't match
             console.log("Invalid user credentials");

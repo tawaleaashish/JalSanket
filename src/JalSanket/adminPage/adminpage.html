@@ -14,11 +14,35 @@
 
 <body>
     <div class="userPage" id="map">
-        <div class="floatBtn">
-            <button class="CR">Check all Complaints</button>
+        <div class="sideContainer">
+            <div class="floatBtn">
+                <button class="CR">Check all Complaints</button>
+            </div>
+            <div class="mapMarking">
+                <div class="listitem">
+                    <div class="circle1"></div>
+                    <div class="category">Flood</div>
+                </div>
+                <div class="listitem">
+                    <div class="circle2"></div>
+                    <div class="category">Water-supply</div>
+                </div>
+                <div class="listitem">
+                    <div class="circle3"></div>
+                    <div class="category">Drainage Problem</div>
+                </div>
+                <div class="listitem">
+                    <div class="circle4"></div>
+                    <div class="category">Water Contamination</div>
+                </div>
+                <div class="listitem">
+                    <div class="circle5"></div>
+                    <div class="category">Water-logging</div>
+                </div>
+            </div>
         </div>
     </div>
-    <script src="adminpage.js"></script>
+    <script type="module" src="adminpage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </body>
-
 </html>

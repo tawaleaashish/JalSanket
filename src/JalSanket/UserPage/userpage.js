@@ -8,8 +8,8 @@ import supabase from "../../config/supabaseClient.js";
 const fetchDataAndAddCircles = async () => {
     try {
         const { data, error } = await supabase
-            .from('ResolvedComplaintDetails')
-            .select('latitude,longitude');
+            .from('ActiveComplaintDetails')
+            .select('latitude,longitude,category');
 
         if (error) 
         {
@@ -17,12 +17,28 @@ const fetchDataAndAddCircles = async () => {
             return;
         }
 
-        // Create a circle for each data point with a radius of 2 meters
         data.forEach(item => {
+            // console.log(JSON.stringify(item))
+            let circleColor = 'red';
+            if (item.category =='Flood') {
+                circleColor = 'red'; 
+            }
+            if (item.category == 'Water-logging') {
+                circleColor = 'blue'; 
+            }
+            if (item.category == 'Water-supply Issue') {
+                circleColor = 'green'; 
+            }
+            if (item.category == 'Drainage Issue') {
+                circleColor = 'black'; 
+            }
+            if (item.category == 'Water Contamination') {
+                circleColor = 'yellow'; 
+            }
             const circle = L.circle([item.latitude, item.longitude], {
                 radius: 2, // 2 meters radius
-                color: 'red',
-                fillColor: 'red',
+                color: circleColor,
+                fillColor: circleColor,
                 fillOpacity: 0.5,
             }).addTo(map);
         });
@@ -30,5 +46,12 @@ const fetchDataAndAddCircles = async () => {
         console.error('Unexpected error:', error);
     }
 };
-
 fetchDataAndAddCircles();
+const statusBtn = document.getElementById('status');
+const ReportBtn = document.getElementById('report');
+statusBtn.addEventListener('click', () => {
+    window.location.href = '../UserStatus/userstatus.html';
+});
+ReportBtn.addEventListener('click', () => {
+    window.location.href = '../ReportPage/reportpage1.html';
+});

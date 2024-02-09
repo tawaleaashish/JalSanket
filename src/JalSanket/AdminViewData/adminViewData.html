@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Complaint Data</title>
+  <link rel="stylesheet" href="adminViewData.css">
+</head>
+
+<body>
+
+  <div class="glassmorphism-section">
+    <div class="glassmorphism-circle circle-1"></div>
+    <div class="glassmorphism-circle circle-2"></div>
+    <div class="glassmorphism-circle circle-3"></div>
+    <div class="centered">
+      <div class="head">Complaint List</div>
+    </div>
+    <div class="glass">
+      <table>
+        <thead>
+          <tr>
+            <th id="serial">Sr No.</th>
+            <th>User ID</th>
+            <th>Category</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Date</th>
+            <th id="statuscolumn">Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="popup-container" id="confirmationPopupContainer">
+      <div class="popup-box">
+        <p>Are you sure you want to change the status?</p>
+        <div class="popup-buttons">
+          <button onclick="confirmStatusChange(true)">Yes</button>
+          <button onclick="confirmStatusChange(false)">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="module" src="adminViewData.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</html>
