@@ -16,7 +16,7 @@ adminBtn.addEventListener('click', () => {
     AdminloginForm.style.display='block';
     i=1;
 });
-import supabase from "../config/supabaseClient.js";
+import supabase from "./supabaseClient";
 loginBtn.addEventListener('click', async()=>{
     if(i==0)
     {

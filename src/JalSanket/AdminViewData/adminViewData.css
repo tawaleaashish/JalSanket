@@ -187,6 +187,8 @@ body {
     /* Adjust table width */
     table {
         width: 20rem;
+        display: block;
+        overflow-x: auto;
     }
 
     /* Adjust font sizes */

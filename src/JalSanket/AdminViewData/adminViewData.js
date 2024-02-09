@@ -1,4 +1,4 @@
-import supabase from "../../config/supabaseClient.js";
+import supabase from "../supabaseClient";
 const fetchAndRenderUserData = async () => {
     try {
         const { data, error } = await supabase

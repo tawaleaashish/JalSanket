@@ -4,7 +4,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-import supabase from "../../config/supabaseClient.js";
+import supabase from "../supabaseClient";
 const fetchDataAndAddCircles = async () => {
     try {
         const { data, error } = await supabase
