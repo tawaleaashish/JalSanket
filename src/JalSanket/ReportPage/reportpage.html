@@ -28,16 +28,17 @@
                 <br>
                 <div class="LocSearch">
                     <input  id="searchbar" type="text" placeholder="Search location">
-                    <div class="searchlogo"><input id="searchButton" type="submit" style="display: none;"></div>   
+                    <div class="searchlogo"s><input id="searchButton" type="submit" style="display: none;"></div>   
                 </div>
                 <br>
                 <div class="box" id="map"></div>
             </div>
             <br>
             <div class="floatBtn">
-                <button class="R">Report</button>
+                <button id="reportbtn" type="submit" class="R">Report</button>
             </div>
         </div>
-        <script src="reportpage.js"></script>
+        <script type="module" src="reportpage.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </body>
 </html>

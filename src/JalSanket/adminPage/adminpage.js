@@ -1,3 +1,8 @@
+const checkComplaintsBtn = document.getElementById('checkComplaints');
+checkComplaintsBtn.addEventListener('click', () => {
+    window.location.href = '../AdminViewData/adminViewData.html';
+});
+
 var map = L.map('map');
 map.setView([21.1458,79.0882], 12.5);
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
