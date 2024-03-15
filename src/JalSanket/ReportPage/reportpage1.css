@@ -23,10 +23,8 @@
     width: 13rem;
 }
 #searchbar{
-    width: 10.5rem;
+    width: 13rem;
     border-radius: 0.5rem;
-    border-top-right-radius: 0rem;
-    border-bottom-right-radius: 0rem;
 }
 #reportbtn{
     width: 10rem;
@@ -57,17 +55,4 @@
 .LocSearch{
     display: flex;
     flex-direction: row;
-}
-.searchlogo{
-    background-image: url(icons8-search.svg);
-    background-color: white;
-    background-repeat: no-repeat;
-    background-size: contain;
-    border: 2px solid black;
-    border-left: 0rem;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }

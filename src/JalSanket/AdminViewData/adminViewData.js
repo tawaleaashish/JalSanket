@@ -1,4 +1,12 @@
 import supabase from "../supabaseClient.js";
+
+function searchGoogle(latitude, longitude, e) {
+  const searchTerm = `${latitude},${longitude}`;
+  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(searchTerm)}`;
+  window.location.href = googleMapsUrl;
+}
+window.searchGoogle = searchGoogle;
+
 const fetchAndRenderUserData = async () => {
     try {
         const { data, error } = await supabase
@@ -21,6 +29,7 @@ const fetchAndRenderUserData = async () => {
                 <td>${complaint.category}</td>
                 <td>${complaint.latitude}</td>
                 <td>${complaint.longitude}</td>
+                <td><a href="#" onclick="searchGoogle('${complaint.latitude}', '${complaint.longitude}')">Click Here</a></td>
                 <td>${complaint.Date}</td>
                 <td class="dropdown">
                     <select class="dropdownbox" name="status" onchange="openConfirmationPopup(this)">

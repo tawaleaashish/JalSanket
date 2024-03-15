@@ -33,15 +33,12 @@ loginBtn.addEventListener('click', async()=>{
             return;
         }
         if (data && data.length > 0) {
-            // User login successful
-            console.log("User login successful");
-            console.log(userloginId);
+            alert("Login Successful");
             localStorage.setItem('user', JSON.stringify(data[0]));
             window.location.href="./UserPage/userpage.html"
 
         } else {
-            // User not found or password doesn't match
-            console.log("Invalid user credentials");
+            alert("Invalid user credentials");
         }
     }
     if(i==1)
@@ -59,12 +56,10 @@ loginBtn.addEventListener('click', async()=>{
             return;
         }
         if (data && data.length > 0) {
-            // User login successful
-            console.log("User login successful");
+            alert("Login Successful!");
             window.location.href="./adminPage/adminpage.html"
         } else {
-            // User not found or password doesn't match
-            console.log("Invalid user credentials");
+            alert("Invalid user credentials");
         }
     }
 });

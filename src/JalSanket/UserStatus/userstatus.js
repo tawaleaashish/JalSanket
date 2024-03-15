@@ -1,13 +1,18 @@
 import supabase from "../supabaseClient.js";
 
+function searchGoogle(latitude, longitude, e) {
+    const searchTerm = `${latitude},${longitude}`;
+    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(searchTerm)}`;
+    window.location.href = googleMapsUrl;
+  }
+  window.searchGoogle = searchGoogle;
+
 const fetchUserData = async () => {
     try {
         const { data, error } = await supabase
             .from('ActiveComplaintDetails')
             .select('*')
             .eq('userloginId', JSON.parse(localStorage.getItem('user'))['userloginId']);
-        
-            // console.log(JSON.parse(localStorage.getItem('user')));
         if (error) {
             console.error('Error fetching data:', error);
             return;
@@ -42,6 +47,15 @@ const fetchUserData = async () => {
                 locationP.className = 'location';
                 locationP.textContent = 'Location: Latitude ' + complaint.latitude + ', Longitude ' + complaint.longitude;
                 section.appendChild(locationP);
+
+                const googleMapsLink = document.createElement('a');
+                googleMapsLink.href = '#';
+                googleMapsLink.textContent = 'Click Here for Location';
+                googleMapsLink.onclick = function() {
+                    searchGoogle(complaint.latitude, complaint.longitude);
+                    return false; 
+                };
+                section.appendChild(googleMapsLink);
 
                 complaintContainer.appendChild(section);
 
