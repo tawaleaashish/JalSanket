@@ -30,6 +30,7 @@
     border-width: 0.1rem;
     font-family: 'Trebuchet MS';
     background-color: rgba(65, 250, 90, 0.753);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {    
