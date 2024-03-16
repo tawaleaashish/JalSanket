@@ -33,7 +33,6 @@ loginBtn.addEventListener('click', async()=>{
             return;
         }
         if (data && data.length > 0) {
-            alert("Login Successful");
             localStorage.setItem('user', JSON.stringify(data[0]));
             window.location.href="./UserPage/userpage.html"
 
@@ -56,7 +55,6 @@ loginBtn.addEventListener('click', async()=>{
             return;
         }
         if (data && data.length > 0) {
-            alert("Login Successful!");
             window.location.href="./adminPage/adminpage.html"
         } else {
             alert("Invalid user credentials");
