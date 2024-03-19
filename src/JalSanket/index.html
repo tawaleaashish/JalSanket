@@ -8,6 +8,13 @@
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./index.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kavoon&family=Libre+Baskerville&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-blue-400 bg-opacity-150 h-screen flex items-center justify-center">
@@ -20,7 +27,7 @@
                 <img src="./Logo.png" alt="alternate text">
             </div>
             <div>
-                <h2 class="text-2xl font-semibold mb-6 text-center">Jal Sanket</h2>
+                <h2 class="text-4xl  mb-6 text-center"id="jalSanket">Jal Sanket</h2>
 
                 <div class="flex space-x-4 mb-4">
                     <button id="adminBtn"
@@ -31,24 +38,24 @@
 
                 <form id="UserloginForm" class="mb-4" style="display: block;">
                     <div class="mb-4">
-                        <label for="username" class="block text-sm font-medium text-black">Username</label>
+                        <label for="username" class="block text-sm font-medium text-black" id="username">Username</label>
                         <input type="text" id="userloginId" name="username" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
                     </div>
 
                     <div class="mb-4">
-                        <label for="password" class="block text-sm font-medium text-black">Password</label>
+                        <label for="password" class="block text-sm font-medium text-black"id="password">Password</label>
                         <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
                     </div>
                 </form>
 
                 <form id="AdminloginForm" class="mb-4" style="display: none;">
                     <div class="mb-4">
-                        <label for="username" class="block text-sm font-medium text-black">Admin Username</label>
+                        <label for="username" class="block text-sm font-medium text-black"id="adminUsername">Admin Username</label>
                         <input type="text" id="ADLoginName" name="username" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
                     </div>
                    
                     <div class="mb-4">
-                        <label for="password" class="block text-sm font-medium text-black">Password</label>
+                        <label for="password" class="block text-sm font-medium text-black"id="adminPassword">Password</label>
                         <input type="password" id="ADpassword" name="password" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
                     </div>
                 </form>
@@ -57,7 +64,7 @@
                     class="w-full bg-blue-300 text-black py-2 px-4 rounded focus:outline-none" style="margin-top: 1rem;">Login</button>
 
                 <div class="flex justify-between text-sm py-2">
-                    <a href="./Login/UserRegister/register.html" class="text-black hover:underline">Register</a>
+                    <a href="./Login/UserRegister/register.html" class="text-black hover:underline"id="register">Register</a>
                 </div>
             </div>
         </div>
