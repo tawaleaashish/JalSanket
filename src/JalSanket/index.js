@@ -17,11 +17,10 @@ adminBtn.addEventListener('click', () => {
     i=1;
 });
 import supabase from "./supabaseClient.js";
-loginBtn.addEventListener('click', async()=>{
-    if(i==0)
-    {
-        let userloginId=document.getElementById("userloginId").value;
-        let password=document.getElementById("password").value;
+async function loginUser() {
+    if (i == 0) {
+        let userloginId = document.getElementById("userloginId").value;
+        let password = document.getElementById("password").value;
         const { data, error } = await supabase
             .from('UserInfo')
             .select('*')
@@ -33,33 +32,38 @@ loginBtn.addEventListener('click', async()=>{
             return;
         }
         if (data && data.length > 0) {
-            alert("Login Successful");
             localStorage.setItem('user', JSON.stringify(data[0]));
-            window.location.href="./UserPage/userpage.html"
+            window.location.href = "./UserPage/userpage.html"
 
         } else {
             alert("Invalid user credentials");
         }
     }
-    if(i==1)
-    {
-        let ADLoginName=document.getElementById("ADLoginName").value;
-        let ADpassword=document.getElementById("ADpassword").value;
+    if (i == 1) {
+        let ADLoginName = document.getElementById("ADLoginName").value;
+        let ADpassword = document.getElementById("ADpassword").value;
         const { data, error } = await supabase
-        .from('AdministratorInfo')
-        .select('*')
-        .eq('ADLoginName', ADLoginName)
-        .eq('ADpassword', ADpassword);
+            .from('AdministratorInfo')
+            .select('*')
+            .eq('ADLoginName', ADLoginName)
+            .eq('ADpassword', ADpassword);
         console.log(data)
         if (error) {
             console.error("Error fetching data from Supabase:", error.message);
             return;
         }
         if (data && data.length > 0) {
-            alert("Login Successful!");
-            window.location.href="./adminPage/adminpage.html"
+            window.location.href = "./adminPage/adminpage.html"
         } else {
             alert("Invalid user credentials");
         }
+    }
+}
+
+loginBtn.addEventListener('click', loginUser);
+
+document.addEventListener('keypress', async (e) => {
+    if (e.key === 'Enter') {
+        await loginUser();
     }
 });
