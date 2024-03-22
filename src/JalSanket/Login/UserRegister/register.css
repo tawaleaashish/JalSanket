@@ -147,7 +147,7 @@ body {
   #register{
     font-family: "Kavoon", serif;
   }
-  #name,#username,#password,#tregister{
+  #name,#un,#pw,#tregister{
     font-size: 20px;
     color: white;
   }

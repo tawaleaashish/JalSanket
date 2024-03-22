@@ -136,8 +136,7 @@ body {
     font-weight: lighter;
     font-size: 16px;
 }
-#adminBtn,#userBtn,#username,#password,#adminUsername,#adminPassword,#loginBtn,#register{
-    /* font-family: 'Noto Sans', sans-serif; */
+#adminBtn,#userBtn,#UN,#PW,#AUN,#APW,#loginBtn,#register{
     font-family: "Marmelad", sans-serif;
     font-size: 20px;
     color: white;

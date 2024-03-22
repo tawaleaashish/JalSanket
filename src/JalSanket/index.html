@@ -5,16 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jal Sanket</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./index.css">
-
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kavoon&family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&family=Libre+Baskerville&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-blue-400 bg-opacity-150 h-screen flex items-center justify-center">
@@ -24,7 +19,7 @@
         <div class="glassmorphism-circle circle-3"></div>
         <div class="glassmorphism-card">
             <div class="flex justify-center items-center ">
-                <img src="./Logo.png" alt="alternate text">
+                <img src="Logo.png" alt="alternate text">
             </div>
             <div>
                 <h2 class="text-4xl  mb-6 text-center"id="jalSanket">Jal Sanket</h2>
@@ -38,25 +33,25 @@
 
                 <form id="UserloginForm" class="mb-4" style="display: block;">
                     <div class="mb-4">
-                        <label for="username" class="block text-sm font-medium text-black" id="username">Username</label>
-                        <input type="text" id="userloginId" name="username" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
+                        <label class="block text-sm font-medium text-black" id="UN">Username</label>
+                        <input type="text" id="ulid" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
                     </div>
 
                     <div class="mb-4">
-                        <label for="password" class="block text-sm font-medium text-black"id="password">Password</label>
-                        <input type="password" id="password" name="password" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
+                        <label class="block text-sm font-medium text-black"id="PW">Password</label>
+                        <input type="password" id="passw" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
                     </div>
                 </form>
 
                 <form id="AdminloginForm" class="mb-4" style="display: none;">
                     <div class="mb-4">
-                        <label for="username" class="block text-sm font-medium text-black"id="adminUsername">Admin Username</label>
-                        <input type="text" id="ADLoginName" name="username" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
+                        <label class="block text-sm font-medium text-black"id="AUN">Admin Username</label>
+                        <input type="text" id="aulid" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
                     </div>
                    
                     <div class="mb-4">
-                        <label for="password" class="block text-sm font-medium text-black"id="adminPassword">Password</label>
-                        <input type="password" id="ADpassword" name="password" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
+                        <label class="block text-sm font-medium text-black"id="APW">Password</label>
+                        <input type="password" id="apassw" class="mt-1 p-2 w-full border rounded-md" style="color: black;">
                     </div>
                 </form>
                     
@@ -69,7 +64,7 @@
             </div>
         </div>
     </div>
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </body>
 
