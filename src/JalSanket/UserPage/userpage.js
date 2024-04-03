@@ -9,7 +9,7 @@ const fetchDataAndAddCircles = async () => {
     try {
         const { data, error } = await supabase
             .from('ActiveComplaintDetails')
-            .select('latitude,longitude,category');
+            .select('latitude,longitude,category').neq('status', 'Resolved').neq('status', 'Closed');
 
         if (error) 
         {
@@ -21,10 +21,10 @@ const fetchDataAndAddCircles = async () => {
             // console.log(JSON.stringify(item))
             let circleColor = 'red';
             if (item.category =='Flood') {
-                circleColor = 'red'; 
+                circleColor = 'blue'; 
             }
             if (item.category == 'Water-logging') {
-                circleColor = 'blue'; 
+                circleColor = 'red'; 
             }
             if (item.category == 'Water-supply Issue') {
                 circleColor = 'green'; 

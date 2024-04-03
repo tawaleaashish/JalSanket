@@ -11,14 +11,14 @@ const fetchAndRenderUserData = async () => {
     try {
         const { data, error } = await supabase
             .from('ActiveComplaintDetails')
-            .select('*');
+            .select('*').neq('status', 'Resolved').neq('status', 'Closed');
 
         if (error) {
             throw new Error(error.message);
         }
         const tbody = document.querySelector('tbody');
         tbody.innerHTML = '';
-
+        console.log(data[0])
         data.forEach((complaint, index) => {
     
             const row = document.createElement('tr');
@@ -31,6 +31,7 @@ const fetchAndRenderUserData = async () => {
                 <td>${complaint.longitude}</td>
                 <td><a href="#" onclick="searchGoogle('${complaint.latitude}', '${complaint.longitude}')">Click Here</a></td>
                 <td>${complaint.Date}</td>
+                <span style="display: none;" class="row_id">${complaint.id}</span>
                 <td class="dropdown">
                     <select class="dropdownbox" name="status" onchange="openConfirmationPopup(this)">
                         <option selected disabled hidden>Error</option>
@@ -60,12 +61,13 @@ function openConfirmationPopup(selectElement) {
 async function confirmStatusChange(confirmation) {
   if (confirmation) {
     var selectedStatus = selectedStatusElement.value;
-    var userloginId = selectedStatusElement.closest('tr').querySelector('.userloginId').innerHTML;
+    // var userloginId = selectedStatusElement.closest('tr').querySelector('.userloginId').innerHTML;
+    var rowId = selectedStatusElement.closest('tr').querySelector('.row_id').innerText;
     try {
       const { data, error } = await supabase
         .from('ActiveComplaintDetails')
         .update({ status: selectedStatus })
-        .eq('userloginId', userloginId);
+        .eq('id', rowId);
 
       if (error) {
         throw new Error(error.message);
@@ -76,7 +78,7 @@ async function confirmStatusChange(confirmation) {
         const { data: resolvedComplaintData, error: resolvedComplaintError } = await supabase
           .from('ActiveComplaintDetails')
           .select('*')
-          .eq('userloginId', userloginId);
+          .eq('id', rowId);
 
         if (resolvedComplaintError) {
           throw new Error(resolvedComplaintError.message);
@@ -85,21 +87,22 @@ async function confirmStatusChange(confirmation) {
         // Insert the resolved complaint data into the ResolvedComplaintDetails table
         const { data: insertedData, error: insertError } = await supabase
           .from('ResolvedComplaintDetails')
-          .insert(resolvedComplaintData[0]); // Assuming there's only one row
+          .upsert(resolvedComplaintData[0])
+          .eq('id', rowId); // Assuming there's only one row
 
         if (insertError) {
           throw new Error(insertError.message);
         }
 
         // Delete the row from the ActiveComplaintDetails table
-        const { error: deleteError } = await supabase
-          .from('ActiveComplaintDetails')
-          .delete()
-          .eq('userloginId', userloginId);
+        // const { error: deleteError } = await supabase
+        //   .from('ActiveComplaintDetails')
+        //   .delete()
+        //   .eq('id', rowId);
 
-        if (deleteError) {
-          throw new Error(deleteError.message);
-        }
+        // if (deleteError) {
+        //   throw new Error(deleteError.message);
+        // }
       }
 
       alert("Status changed to '" + selectedStatus + "'");
